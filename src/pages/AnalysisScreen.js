@@ -5,6 +5,8 @@ import { db } from "../firebase";
 import { collection, query, where, onSnapshot, doc, orderBy } from "firebase/firestore";
 import { PieChart } from '../components/PieChart';
 import Loader from '../components/Loader';
+import { MonthlyChart } from '../components/MonthlyChart';
+import { Container } from 'react-bootstrap';
 
 function AnalysisScreen() {
   const { currentUser } = useAuth();
@@ -40,24 +42,27 @@ function AnalysisScreen() {
   if (currentUser) {
     return (
       <div>
-        <h3 className='m-3'>Finacial Analysis</h3>
-        <div className='d-flex'>
-        <h6 className='m-3 p-3 min-w-120'>Select Data:</h6>
-          <RecordFilter
-            records={records}
-            onFilterChange={handleFilterChange}
-          />
+        <h3 className='p-4'>Finacial Analysis</h3>
+        <MonthlyChart records={records} />
+        <hr />
+        <Container>
+          <div className='d-flex bg-blue'>
+            <h6 className='m-3 min-w-120'>Select Data:</h6>
+            <RecordFilter
+              records={records}
+              onFilterChange={handleFilterChange}
+            />
           </div>
-
-          <PieChart records={filteredRecords} income={income} expense={expense} />
-        </div>
-        )
+        </Container>
+        <PieChart records={filteredRecords} income={income} expense={expense} />
+      </div>
+    )
   } else {
     return (
-        <Loader />
-        )
+      <Loader />
+    )
   }
 
 }
 
-        export default AnalysisScreen
+export default AnalysisScreen

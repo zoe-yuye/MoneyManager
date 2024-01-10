@@ -9,8 +9,6 @@ ChartJS.register(ArcElement, Tooltip, Legend, Title);
 export function PieChart({ records, income, expense }) {
   const incomeRecords = records.filter((record) => record.type === 'Income');
   const expenseRecords = records.filter((record) => record.type === 'Expense');
-  console.log(incomeRecords);
-  console.log(expenseRecords);
   const incomeCategoryMap = new Map();
   incomeRecords.forEach(record => {
     const { category, amount } = record;
@@ -106,8 +104,7 @@ export function PieChart({ records, income, expense }) {
   };
   return (
     <Container >
-      <Row className='m-3 px-5 py-3 bg-grey'>
-        <h4>Pie Charts</h4>
+      <Row className='mx-5 px-5 py-3 bg-grey'>
         <Col sm={12} md={6} lg={4} className='py-3'><Pie data={incomeData} options={incomeChartOptions} className='pieChart'/></Col>
         <Col sm={12} md={6} lg={4} className='py-3'><Pie data={expenseData} options={expenseChartOptions} /></Col>
         <Col sm={12} md={6} lg={4} className='py-3'><Pie data={balanceData} options={balanceChartOptions} /></Col>

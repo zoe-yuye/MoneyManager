@@ -15,7 +15,7 @@ function App() {
         <Header />
         <Container className='mt-3'>
           <Routes>
-            <Route path="/money-manager" element={<Welcome />} />
+            <Route path="/MoneyManager" element={<Welcome />} />
             <Route path="/" element={<Welcome />} />
             <Route path="/home" element={<HomeScreen />} />
             <Route path="/signup" element={<SignupScreen />} />

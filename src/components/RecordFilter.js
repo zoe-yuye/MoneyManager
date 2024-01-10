@@ -30,7 +30,7 @@ function RecordFilter({records, onFilterChange}) {
         setSelectedOption(event.target.value);
     };
     return (
-        <Row className='align-items-center my-2'>
+        <Row className='align-items-center'>
          
             <Col xs='auto' md={12} lg={3} >
                 <Form.Select

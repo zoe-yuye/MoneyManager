@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 export default function Record({ record, onDelete,onEdit }) {
     const rowClassName = record.type === 'Income' ? 'text-success' : 'text-danger';
     const formattedDate = format(record.date.toDate(), 'dd-MM-yyyy (EE)');
+    
     return (
         <tr className={rowClassName}>
             <td style={{ width: '10%' }}>{record.type}</td>

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Form, Row, Col, FormControl, Button } from 'react-bootstrap';
+import { Form, Row, Col, FormControl, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { collection, addDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
 import { useAuth } from '../contexts/AuthContexts';
 import { MdOutlineAddToPhotos } from "react-icons/md";
+import AddCategoryModal from './AddCategoryModal';
+
 export default function MoneyForm({ categories }) {
     const [amount, setAmount] = useState('');
     const [description, setDescription] = useState('');
@@ -13,6 +15,7 @@ export default function MoneyForm({ categories }) {
     const [date, setDate] = useState(new Date());
     const { currentUser } = useAuth();
     const [selectedCategory, setSelectedCategory] = useState('');
+    const [showAddCategoryModal, setShowAddCategoryModal] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,7 +36,16 @@ export default function MoneyForm({ categories }) {
         setType('');
         setSelectedCategory('');
     }
-    const addCategory = () =>{}
+
+    const addCategory = () => {
+        setShowAddCategoryModal(true);
+    }
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Click to add a new category.
+        </Tooltip>
+    );
+
     return (
         <>
             <h3>Add Record</h3>
@@ -50,13 +62,13 @@ export default function MoneyForm({ categories }) {
                         <Form.Select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} required>
                             <option value=''>Category</option>
                             {type === 'Income'
-                                ? categories.filter(category => category.type === 'Income').map(category => (
+                                ? categories.filter(category => category.type === 'Income' && (category.user === '' || category.user === currentUser.uid)).map(category => (
                                     <option key={category.name} value={category.name}>
                                         {category.name}
                                     </option>
                                 ))
                                 : (type === 'Expense'
-                                    ? categories.filter(category => category.type === 'Expense').map(category => (
+                                    ? categories.filter(category => category.type === 'Expense' && (category.user === '' || category.user === currentUser.uid)).map(category => (
                                         <option key={category.name} value={category.name}>
                                             {category.name}
                                         </option>
@@ -65,7 +77,14 @@ export default function MoneyForm({ categories }) {
                                 )
                             }
                         </Form.Select>
-                        <Button className='addBtn' variant="outline-secondary" size='sm' onClick={addCategory}><MdOutlineAddToPhotos size={20}/></Button>
+                        <OverlayTrigger
+                            placement="bottom"
+                            delay={{ show: 200, hide: 100 }}
+                            overlay={renderTooltip}
+                        >
+                            <Button className='addBtn' variant="outline-secondary" size='sm' onClick={addCategory}><MdOutlineAddToPhotos size={20} /></Button>
+                        </OverlayTrigger>
+                        <AddCategoryModal showAddCategoryModal={showAddCategoryModal} setShowAddCategoryModal={setShowAddCategoryModal} />
                     </ Col>
 
                     <Col sm={6} md={3} lg={2} className='my-1' >

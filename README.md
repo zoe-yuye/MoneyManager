@@ -4,13 +4,13 @@ Money Manager is a simple yet practical expense tracking application that helps 
 
 Users can securely register accounts through Firebase's authentication feature and choose to log in either via email registration or using their GitHub account.
 
-Deployed on github page, view through: [MoneyManager](https://zoe-yuye.github.io/money-manager/)
+Deployed on github page, view through: [MoneyManager](https://zoe-yuye.github.io/MoneyManager/)
 
 ## Features
 
 ### Add Records
 - Users can add income and expense records, including descriptions, amounts, and dates.
-- Data is securely stored in Firebase Realtime Database.
+- Data is securely stored in Firebase Database.
 
 ### View Records
 - Users can view all financial records.
