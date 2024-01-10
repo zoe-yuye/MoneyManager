@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/money-manager/static/css/main.8f3310d4.css",
+    "main.js": "/money-manager/static/js/main.595c792f.js",
+    "static/media/bg-image.jpg": "/money-manager/static/media/bg-image.55e3a5eed8a6c4f91193.jpg",
+    "static/media/logo.svg": "/money-manager/static/media/logo.e60f3ec16b2a7d9a83f80635d59634de.svg",
+    "index.html": "/money-manager/index.html",
+    "main.8f3310d4.css.map": "/money-manager/static/css/main.8f3310d4.css.map",
+    "main.595c792f.js.map": "/money-manager/static/js/main.595c792f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f3310d4.css",
+    "static/js/main.595c792f.js"
+  ]
+}
