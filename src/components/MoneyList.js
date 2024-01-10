@@ -26,7 +26,6 @@ export default function MoneyList({ records, loading, categories}) {
     }
     const handleDeleteClose = () => setShowDeleteModal(false);
    
-
     const [showEditModal, setShowEditModal] = useState(false);
     const onEditClicked = (record) => {
         setShowEditModal(true);

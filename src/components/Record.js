@@ -19,7 +19,6 @@ export default function Record({ record, onDelete,onEdit }) {
                     <Button variant="secondary" size="sm" onClick={onDelete}>Delete</Button>
                 </Stack>
             </td>
-            
         </tr>
     )
 }

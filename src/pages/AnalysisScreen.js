@@ -39,9 +39,10 @@ function AnalysisScreen() {
   const handleFilterChange = (newFilteredRecords) => {
     setFilteredRecords(newFilteredRecords);
   };
+
   if (currentUser) {
     return (
-      <div>
+      <div className='my-2'>
         <h3 className='p-4'>Finacial Analysis</h3>
         <MonthlyChart records={records} />
         <hr />
@@ -62,7 +63,6 @@ function AnalysisScreen() {
       <Loader />
     )
   }
-
 }
 
-export default AnalysisScreen
+export default AnalysisScreen;

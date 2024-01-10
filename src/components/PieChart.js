@@ -5,7 +5,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
-
 export function PieChart({ records, income, expense }) {
   const incomeRecords = records.filter((record) => record.type === 'Income');
   const expenseRecords = records.filter((record) => record.type === 'Expense');
@@ -47,6 +46,7 @@ export function PieChart({ records, income, expense }) {
       },
     },
   };
+
   const incomeData = {
     labels: incomeCategoryMap.size > 0 ? Array.from(incomeCategoryMap.keys()) : ['No records'],
     datasets: [
@@ -67,8 +67,6 @@ export function PieChart({ records, income, expense }) {
     ],
   };
 
-  
-
   const expenseData = {
     labels: expenseCategoryMap.size > 0 ? Array.from(expenseCategoryMap.keys()) : ['No records'],
     datasets: [
@@ -82,7 +80,6 @@ export function PieChart({ records, income, expense }) {
           'rgb(255, 159, 64)',
           'rgb(75, 192, 192)',
           'rgb(255, 99, 132)',
-          
         ],
 
       },

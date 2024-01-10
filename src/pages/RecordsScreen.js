@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Panel from '../components/Panel';
-import MoneyForm from '../components/MoneyForm';
 import MoneyList from '../components/MoneyList';
 import { useAuth } from '../contexts/AuthContexts';
 import { db } from "../firebase";
@@ -8,7 +7,7 @@ import { collection, query, where, onSnapshot, doc, orderBy } from "firebase/fir
 import RecordFilter from '../components/RecordFilter';
 import Loader from '../components/Loader';
 
-function HomeScreen() {
+function RecordsScreen() {
     const { currentUser } = useAuth();
     const [records, setRecords] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -57,11 +56,6 @@ function HomeScreen() {
     if (currentUser) {
         return (
             <div>
-                <div className='bg-grey p-4 my-5'>
-                    <MoneyForm categories={categories} />
-                </div>
-
-                <hr />
                 <div className='d-flex'>
                     <h3 className='m-3'>Summary</h3>
                     <RecordFilter
@@ -81,4 +75,4 @@ function HomeScreen() {
     }
 }
 
-export default HomeScreen;
+export default RecordsScreen;

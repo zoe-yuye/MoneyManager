@@ -29,8 +29,6 @@ export function MonthlyChart({ records }) {
     expenseData[month] += parseFloat(record.amount);
   });
 
- 
-
   return (
     <Container>
       <div className='d-flex bg-blue'>

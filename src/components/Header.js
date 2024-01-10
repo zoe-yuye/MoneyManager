@@ -10,7 +10,6 @@ import { useAuth } from '../contexts/AuthContexts';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
-
   const { logout, currentUser } = useAuth();
   const navigate = useNavigate();
 
@@ -22,6 +21,7 @@ function Header() {
       console.error("Logout failed:", error);
     }
   };
+
   return (
     <Navbar variant='dark' expand="lg" className="bg-body-tertiary bg-header" >
       <Container>
@@ -36,6 +36,9 @@ function Header() {
           <Nav className="me-auto">
             <LinkContainer to={currentUser ? "/home" : "/"}  >
               <Nav.Link className='mx-3'>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to={currentUser ? "/records" : "/"}  >
+              <Nav.Link className='mx-3'>Records</Nav.Link>
             </LinkContainer>
             <LinkContainer to={currentUser ? "/analysis" : "/"} >
               <Nav.Link>Finacial Analysis</Nav.Link>

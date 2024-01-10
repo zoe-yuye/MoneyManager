@@ -39,7 +39,8 @@ export default function MoneyForm({ categories }) {
 
     const addCategory = () => {
         setShowAddCategoryModal(true);
-    }
+    };
+    
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
             Click to add a new category.

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, Form, Row, Col, FormControl } from 'react-bootstrap';
-import { collection, addDoc, doc } from "firebase/firestore";
+import { collection, addDoc} from "firebase/firestore";
 import { db } from "../firebase";
 import { useAuth } from '../contexts/AuthContexts';
 
