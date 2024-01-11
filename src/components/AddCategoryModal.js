@@ -19,6 +19,8 @@ export default function AddCategoryModal({ showAddCategoryModal, setShowAddCateg
             user: currentUser.uid
         });
         setShowAddCategoryModal(false);
+        setType("");
+        setCategory("");
     }
     const handleAddCategoryModalClose = () => { setShowAddCategoryModal(false); }
 

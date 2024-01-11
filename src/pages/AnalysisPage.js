@@ -48,7 +48,7 @@ function AnalysisScreen() {
         <hr />
         <Container>
           <div className='d-flex bg-blue'>
-            <h6 className='m-3 min-w-120'>Select Data:</h6>
+            <h6 className='m-3 min-w-130'>Select Data:</h6>
             <RecordFilter
               records={records}
               onFilterChange={handleFilterChange}

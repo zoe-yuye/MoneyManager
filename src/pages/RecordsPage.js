@@ -28,7 +28,7 @@ function RecordsScreen() {
                         setRecords(recordsData);
                     });
 
-                    const categoriesQuery = query(collection(db, "categories"));
+                    const categoriesQuery = query(collection(db, "categories"), where('user', '==', currentUser.uid));
                     const unsubscribeCategories = onSnapshot(categoriesQuery, (categoriesSnapshot) => {
                         const categoriesData = categoriesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                         setCategories(categoriesData);

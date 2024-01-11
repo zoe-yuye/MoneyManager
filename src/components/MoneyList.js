@@ -52,7 +52,7 @@ export default function MoneyList({ records, loading, categories}) {
                     {currentRecords.map(record => <Record record={record} key={record.id} onDelete={() => onDeleteClicked(record)} onEdit={() => onEditClicked(record)}/>)}
                 </tbody>
             </Table>
-            <DeleteModal selectedRecord={selectedRecord} showDeleteModal={showDeleteModal} handleDeleteClose={handleDeleteClose}/>
+            <DeleteModal selectedRecord={selectedRecord} showDeleteModal={showDeleteModal} handleDeleteClose={handleDeleteClose} type={'record'}/>
             <EditModal categories={categories} selectedRecord={selectedRecord} showEditModal={showEditModal} handleEidtClose={handleEidtClose}/>
             <Pagination>
                 {Array.from({ length: totalPages }).map((_, index) => (

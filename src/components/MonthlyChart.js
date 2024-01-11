@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Form } from 'react-bootstrap';
+import { Container, Row, Form, Col } from 'react-bootstrap';
 import { BarChart } from './BarChart';
 import { LineChart } from './LineChart';
 
@@ -32,31 +32,38 @@ export function MonthlyChart({ records }) {
   return (
     <Container>
       <div className='d-flex bg-blue'>
-        <h6 className='m-3 min-w-120'>Select a Year:</h6>
-        <Form.Select
-          aria-label="Default select example"
-          value={selectedYear}
-          onChange={handleYearOptionChange}
-          className='my-2 selectWidth'
-        >
-          {years.map((year) => (<option value={year} key={year}>{year}</option>))}
-        </Form.Select>
-        <h6 className='m-3 min-w-120'>Select Chart Type:</h6>
-        <Form.Select
-          aria-label="Default select example"
-          value={selectedChart}
-          onChange={handleChartOptionChange}
-          className='my-2 selectWidth'
-        >
-          <option value='bar'>Bar Chart</option>
-          <option value='line'>Line Chart</option>
-        </Form.Select>
+        <Row>
+          <Col className='d-flex'>
+            <h6 className='mt-3 mx-3 min-w-130'>Select a Year:</h6>
+            <Form.Select
+              aria-label="Default select example"
+              value={selectedYear}
+              onChange={handleYearOptionChange}
+              className='m-2 selectWidth'
+            >
+              {years.map((year) => (<option value={year} key={year}>{year}</option>))}
+            </Form.Select>
+          </Col>
+          <Col className='d-flex'>
+            <h6 className='m-3 min-w-130'>Select Chart Type:</h6>
+            <Form.Select
+              aria-label="Default select example"
+              value={selectedChart}
+              onChange={handleChartOptionChange}
+              className='m-2 selectWidth'
+            >
+              <option value='bar'>Bar Chart</option>
+              <option value='line'>Line Chart</option>
+            </Form.Select>
+          </Col>
+        </Row>
       </div>
-      <Row className='mx-5 p-5 bg-grey' >
-        {selectedChart === 'line' ? 
-        <LineChart incomeData={incomeData} expenseData={expenseData}/> :
-        <BarChart incomeData={incomeData} expenseData={expenseData}/>
-      }</Row>
+      <Row className='mx-5 p-5 bg-grey' style={{maxHeight: "350px"}}>
+        {selectedChart === 'line' ?
+          <LineChart incomeData={incomeData} expenseData={expenseData} /> :
+          <BarChart incomeData={incomeData} expenseData={expenseData} />
+        }
+      </Row>
     </Container>
   );
 }

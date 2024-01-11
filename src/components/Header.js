@@ -43,11 +43,13 @@ function Header() {
             <LinkContainer to={currentUser ? "/analysis" : "/"} >
               <Nav.Link>Finacial Analysis</Nav.Link>
             </LinkContainer>
+            <LinkContainer to={currentUser ? "/categories" : "/"} >
+              <Nav.Link>Categories</Nav.Link>
+            </LinkContainer>
           </Nav>
           <Nav>
             {currentUser ? (<NavDropdown title={currentUser.email} id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.3">Settings</NavDropdown.Item>
-              <NavDropdown.Divider />
+              
               <NavDropdown.Item onClick={onLogout}>
                 Log Out
               </NavDropdown.Item>

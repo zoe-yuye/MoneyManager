@@ -10,8 +10,8 @@ code {
 }
 
 .selectWidth{
-  max-width: 180px;
-  min-width: 180px;
+  max-width: 140px;
+  min-width: 120px;
 }
 
 .iconMargin{
@@ -47,8 +47,9 @@ code {
   color: rgb(27, 37, 139);
   -webkit-text-stroke: 1px rgb(94, 91, 91);
 }
-.min-w-120{
-  min-width: 120px;
+.min-w-130{
+  min-width: 130px;
+  max-width: 130px;
 }
 .min-h-600{
   min-height: 600px;

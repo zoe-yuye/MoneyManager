@@ -63,13 +63,13 @@ export default function MoneyForm({ categories }) {
                         <Form.Select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} required>
                             <option value=''>Category</option>
                             {type === 'Income'
-                                ? categories.filter(category => category.type === 'Income' && (category.user === '' || category.user === currentUser.uid)).map(category => (
+                                ? categories.filter(category => category.type === 'Income').map(category => (
                                     <option key={category.name} value={category.name}>
                                         {category.name}
                                     </option>
                                 ))
                                 : (type === 'Expense'
-                                    ? categories.filter(category => category.type === 'Expense' && (category.user === '' || category.user === currentUser.uid)).map(category => (
+                                    ? categories.filter(category => category.type === 'Expense').map(category => (
                                         <option key={category.name} value={category.name}>
                                             {category.name}
                                         </option>

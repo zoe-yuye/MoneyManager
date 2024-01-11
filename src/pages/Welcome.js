@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { useAuth } from '../contexts/AuthContexts';
 import MoneyForm from '../components/MoneyForm';
 import { db } from "../firebase";
-import { collection, query, onSnapshot } from "firebase/firestore";
+import { collection, query, onSnapshot, where } from "firebase/firestore";
 
 export default function Welcome() {
   const { currentUser } = useAuth();
@@ -13,7 +13,7 @@ export default function Welcome() {
     async function fetchData() {
       if (currentUser) {
         try {
-          const categoriesQuery = query(collection(db, "categories"));
+          const categoriesQuery = query(collection(db, "categories"), where('user', '==', currentUser.uid));
           const unsubscribeCategories = onSnapshot(categoriesQuery, (categoriesSnapshot) => {
             const categoriesData = categoriesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             setCategories(categoriesData);

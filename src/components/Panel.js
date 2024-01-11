@@ -5,7 +5,7 @@ export default function Panel({income, expense }) {
   
     return (
         <>
-            <Row>
+            <Row className='my-3'>
                 <Col>
                     <Card
                         bg="success"
