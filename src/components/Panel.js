@@ -5,12 +5,12 @@ export default function Panel({income, expense }) {
   
     return (
         <>
-            <Row className='my-3' style={{maxHeight: "200px", minHeight: '100px'}}>
+            <Row className='my-3' >
                 <Col>
                     <Card
                         bg="success"
                         text="white"
-                        className="mb-2"
+                        className="mb-2 card"
                     >
                         <Card.Header>Income</Card.Header>
                         <Card.Body>
@@ -18,11 +18,11 @@ export default function Panel({income, expense }) {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col>
+                <Col >
                     <Card
                         bg="danger"
                         text="white"
-                        className="mb-2"
+                        className="mb-2 card"
                     >
                         <Card.Header>Expense</Card.Header>
                         <Card.Body>
@@ -34,7 +34,7 @@ export default function Panel({income, expense }) {
                     <Card
                         bg="secondary"
                         text="white"
-                        className="mb-2"
+                        className="mb-2 card"
                     >
                         <Card.Header>Total</Card.Header>
                         <Card.Body>

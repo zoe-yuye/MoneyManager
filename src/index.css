@@ -1,6 +1,6 @@
-#root{
+#root {
   color: #535050;
-  min-height: 100vh; 
+  min-height: 100vh;
   background-color: #fff;
 }
 
@@ -9,51 +9,65 @@ code {
     monospace;
 }
 
-.selectWidth{
+.selectWidth {
   max-width: 140px;
   min-width: 120px;
 }
 
-.iconMargin{
+.iconMargin {
   margin-right: 5px;
   margin-top: -5px;
 }
-.bg-header{
+
+.bg-header {
   background-color: #22486d;
   color: #ffffff;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
-.bg-grey{
+
+.bg-grey {
   background-color: rgba(211, 211, 211, 0.3);
   border-radius: 10px;
 }
-.bg-blue{
-  background-color:rgba(34, 72, 109, 0.4);
+
+.bg-blue {
+  background-color: rgba(34, 72, 109, 0.4);
   margin: 10px 50px;
   border-radius: 10px;
 }
-.max-w-400{
+
+.max-w-400 {
   max-width: 400px;
 }
-.bg-img{
-  min-height: 65vh; 
+
+.bg-img {
+  min-height: 65vh;
   font-weight: 500;
-  background-size: 100vh; 
-  background-repeat:no-repeat;
+  background-size: 100vh;
+  background-repeat: no-repeat;
   background-position: center center;
   background-image: url("./images/bg-image.jpg");
 }
-.color-welcome{
+
+.color-welcome {
   color: rgb(27, 37, 139);
   -webkit-text-stroke: 1px rgb(94, 91, 91);
 }
-.min-w-130{
+
+.min-w-130 {
   min-width: 100px;
   max-width: 130px;
 }
-.min-h-600{
+
+.min-h-600 {
   min-height: 600px;
 }
-.min-w-450{
+
+.min-w-450 {
   min-width: 400px;
+}
+
+.card {
+  max-Height: 200px;
+  min-Height: 125px
 }
