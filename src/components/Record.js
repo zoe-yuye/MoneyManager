@@ -12,7 +12,7 @@ export default function Record({ record, onDelete,onEdit }) {
             <td style={{ width: '15%' }}>{parseFloat(record.amount).toFixed(2)}</td>
             <td style={{ width: '15%' }}>{record.category}</td>
             <td style={{ width: '25%' }}>{record.description}</td>
-            <td style={{ width: '25%' }}>{formattedDate}</td>
+            <td style={{ width: '25%', minWidth: '150px' }}>{formattedDate}</td>
             <td style={{ width: '10%' }}>
                 <Stack direction="horizontal" gap={3}>
                     <Button variant="secondary" size="sm" onClick={onEdit}>Edit</Button>

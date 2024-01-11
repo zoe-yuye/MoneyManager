@@ -45,7 +45,7 @@ export function MonthlyChart({ records }) {
             </Form.Select>
           </Col>
           <Col className='d-flex'>
-            <h6 className='m-3 min-w-130'>Select Chart Type:</h6>
+            <h6 className='m-3 min-w-130'>Select Chart:</h6>
             <Form.Select
               aria-label="Default select example"
               value={selectedChart}
@@ -58,7 +58,7 @@ export function MonthlyChart({ records }) {
           </Col>
         </Row>
       </div>
-      <Row className='mx-5 p-5 bg-grey' style={{maxHeight: "350px"}}>
+      <Row className='mx-5 p-5 bg-grey' style={{maxHeight: "350px", minHeight: '400px'}}>
         {selectedChart === 'line' ?
           <LineChart incomeData={incomeData} expenseData={expenseData} /> :
           <BarChart incomeData={incomeData} expenseData={expenseData} />

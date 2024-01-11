@@ -35,10 +35,10 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <LinkContainer to={currentUser ? "/home" : "/"}  >
-              <Nav.Link className='mx-3'>Home</Nav.Link>
+              <Nav.Link >Home</Nav.Link>
             </LinkContainer>
             <LinkContainer to={currentUser ? "/records" : "/"}  >
-              <Nav.Link className='mx-3'>Records</Nav.Link>
+              <Nav.Link >Records</Nav.Link>
             </LinkContainer>
             <LinkContainer to={currentUser ? "/analysis" : "/"} >
               <Nav.Link>Finacial Analysis</Nav.Link>
@@ -49,7 +49,6 @@ function Header() {
           </Nav>
           <Nav>
             {currentUser ? (<NavDropdown title={currentUser.email} id="basic-nav-dropdown">
-              
               <NavDropdown.Item onClick={onLogout}>
                 Log Out
               </NavDropdown.Item>

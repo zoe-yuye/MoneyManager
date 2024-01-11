@@ -5,7 +5,7 @@ export default function Panel({income, expense }) {
   
     return (
         <>
-            <Row className='my-3'>
+            <Row className='my-3' style={{maxHeight: "200px", minHeight: '100px'}}>
                 <Col>
                     <Card
                         bg="success"

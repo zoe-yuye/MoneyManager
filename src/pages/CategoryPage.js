@@ -70,31 +70,9 @@ function CategoryPage() {
 
     return (
         <div >
-            <AddCategoryModal showAddCategoryModal={showAddCategoryModal} setShowAddCategoryModal={setShowAddCategoryModal} />
-            <Modal show={showEidt} onHide={handleEidtClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Edit Category</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form >
-                        <Form.Select value={type} onChange={(e) => setType(e.target.value)} required className='my-3'>
-                            <option value=''>Select category type</option>
-                            <option value='Income'>Income</option>
-                            <option value='Expense'>Expense</option>
-                        </Form.Select>
-                        <FormControl className='my-3' value={category} onChange={(e) => setCategory(e.target.value) } placeholder='New Category' />
-                        <Row>
-                            <Col></Col>
-                            <Col xs="auto" className='my-1 mx-3' >
-                                <Button type='submit' variant='primary' onClick={handleSubmit} size='sm'>Save</Button>
-                            </ Col>
-                        </Row>
-                    </Form>
-                </Modal.Body>
-            </Modal>
-            <div className='d-flex m-5'>
-                <h3>Manage Category</h3>
-                <Button className='mx-5' variant="primary" onClick={addCategory}>Add Category</Button>
+            <div className='d-flex mx-3 my-5'>
+                <h3 className='mx-3' style={{ minWidth: "190px" }}>Manage Category</h3>
+                <Button variant="primary" onClick={addCategory} style={{ minWidth: "130px" }}>Add Category</Button>
             </div>
             <Row>
                 <Col className='mx-3' style={{ maxWidth: "400px" }}>
@@ -144,6 +122,28 @@ function CategoryPage() {
                     </Table>
                 </Col>
             </Row>
+            <AddCategoryModal showAddCategoryModal={showAddCategoryModal} setShowAddCategoryModal={setShowAddCategoryModal} />
+            <Modal show={showEidt} onHide={handleEidtClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Edit Category</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form >
+                        <Form.Select value={type} onChange={(e) => setType(e.target.value)} required className='my-3'>
+                            <option value=''>Select category type</option>
+                            <option value='Income'>Income</option>
+                            <option value='Expense'>Expense</option>
+                        </Form.Select>
+                        <FormControl className='my-3' value={category} onChange={(e) => setCategory(e.target.value) } placeholder='New Category' />
+                        <Row>
+                            <Col></Col>
+                            <Col xs="auto" className='my-1 mx-3' >
+                                <Button type='submit' variant='primary' onClick={handleSubmit} size='sm'>Save</Button>
+                            </ Col>
+                        </Row>
+                    </Form>
+                </Modal.Body>
+            </Modal>
         </div>
     )
 }

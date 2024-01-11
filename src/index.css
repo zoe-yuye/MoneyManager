@@ -48,9 +48,12 @@ code {
   -webkit-text-stroke: 1px rgb(94, 91, 91);
 }
 .min-w-130{
-  min-width: 130px;
+  min-width: 100px;
   max-width: 130px;
 }
 .min-h-600{
   min-height: 600px;
+}
+.min-w-450{
+  min-width: 400px;
 }

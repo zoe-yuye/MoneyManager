@@ -42,11 +42,11 @@ function AnalysisScreen() {
 
   if (currentUser) {
     return (
-      <div className='my-2'>
+      <div className='my-2  min-w-450' >
         <h3 className='p-4'>Finacial Analysis</h3>
         <MonthlyChart records={records} />
         <hr />
-        <Container>
+        <Container >
           <div className='d-flex bg-blue'>
             <h6 className='m-3 min-w-130'>Select Data:</h6>
             <RecordFilter

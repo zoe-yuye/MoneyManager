@@ -37,7 +37,7 @@ export default function MoneyList({ records, loading, categories}) {
         <>
             <h5 className='m-3'>Details</h5>
             {loading && <Loader />}
-            <Table striped bordered hover className='bg-light'>
+            <Table striped bordered hover className='bg-light' responsive>
                 <thead>
                     <tr style={{ color: '#555' }}>
                         <th>Type</th>
