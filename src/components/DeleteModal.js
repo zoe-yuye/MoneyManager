@@ -6,8 +6,13 @@ import { db } from "../firebase";
 
 export default function DeleteModal({ selectedRecord, showDeleteModal, handleDeleteClose, type}) {
     const handleDelete = () => { 
-        deleteDoc(doc(db, "records", selectedRecord.id));
-        handleDeleteClose();
+        if(selectedRecord.hasOwnProperty('date')){
+            deleteDoc(doc(db, "records", selectedRecord.id));
+            handleDeleteClose();
+        }else{
+            deleteDoc(doc(db, "categories", selectedRecord.id));
+            handleDeleteClose();
+        }
     }
     return (
         <Modal show={showDeleteModal} onHide={handleDeleteClose}>

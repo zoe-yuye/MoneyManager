@@ -40,7 +40,7 @@ export default function Welcome() {
           <div className='bg-grey p-4 my-3'>
             <MoneyForm categories={categories} />
           </div>
-          <LinkContainer to='/home'>
+          <LinkContainer to='/records'>
             <Button variant="warning">Show Records</Button>
           </LinkContainer>
         </>

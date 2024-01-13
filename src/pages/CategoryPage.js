@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import { collection, query, onSnapshot, where, deleteDoc, updateDoc, doc } from "firebase/firestore";
 import { useAuth } from '../contexts/AuthContexts';
 import AddCategoryModal from '../components/AddCategoryModal';
+import DeleteModal from '../components/DeleteModal';
 
 function CategoryPage() {
     const { currentUser } = useAuth();
@@ -14,8 +15,10 @@ function CategoryPage() {
     const [categories, setCategories] = useState([]);
     const [showAddCategoryModal, setShowAddCategoryModal] = useState(false);
     const [showEidt, setShowEdit] = useState(false);
-
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    
     const handleEidtClose = () => setShowEdit(false);
+    const handleDeleteClose = () => setShowDeleteModal(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -90,7 +93,7 @@ function CategoryPage() {
                                     <td style={{ width: '30%' }}>
                                         <Stack direction="horizontal" gap={3}>
                                             <Button variant="success" size="sm" onClick={() => {setShowEdit(true); setSelectedCategory(category)}} >Edit</Button>
-                                            <Button variant="danger" size="sm" onClick={() => deleteDoc(doc(db, "categories", category.id))}>Delete</Button>
+                                            <Button variant="danger" size="sm" onClick={() => {setShowDeleteModal(true); setSelectedCategory(category)}} >Delete</Button>
                                         </Stack>
                                     </td>
                                 </tr>
@@ -113,7 +116,7 @@ function CategoryPage() {
                                     <td style={{ width: '30%' }}>
                                         <Stack direction="horizontal" gap={3}>
                                             <Button variant="success" size="sm" onClick={() => {setShowEdit(true); setSelectedCategory(category)}}>Edit</Button>
-                                            <Button variant="danger" size="sm" onClick={() => deleteDoc(doc(db, "categories", category.id))}>Delete</Button>
+                                            <Button variant="danger" size="sm" onClick={() => {setShowDeleteModal(true); setSelectedCategory(category)}} >Delete</Button>
                                         </Stack>
                                     </td>
                                 </tr>
@@ -122,6 +125,7 @@ function CategoryPage() {
                     </Table>
                 </Col>
             </Row>
+            <DeleteModal selectedRecord={selectedCategory} showDeleteModal={showDeleteModal} handleDeleteClose={handleDeleteClose} type={'record'}/>
             <AddCategoryModal showAddCategoryModal={showAddCategoryModal} setShowAddCategoryModal={setShowAddCategoryModal} />
             <Modal show={showEidt} onHide={handleEidtClose}>
                 <Modal.Header closeButton>
