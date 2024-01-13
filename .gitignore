@@ -1,3 +1,10 @@
 .vs/
 build/
 node_modules/
+.firebaserc
+firebase.json
+firestore.indexes.json
+firestore.rules
+src/firebase.js
+src/firebase.js
+src/firebase.js

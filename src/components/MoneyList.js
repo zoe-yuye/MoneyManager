@@ -7,6 +7,7 @@ import DeleteModal from './DeleteModal';
 import EditModal from './EditModal';
 
 export default function MoneyList({ records, loading, categories}) {
+    
     const itemsPerPage = 7;
     const [currentPage, setCurrentPage] = useState(1);
 

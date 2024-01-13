@@ -1,8 +1,6 @@
 # Money Manager
 
-Money Manager is a simple yet practical expense recording application that helps users effortlessly manage their income and expense records, while providing detailed statistical insights.
-
-Users can securely register accounts through Firebase's authentication feature and choose to log in either via email registration or using their GitHub account.
+Money Manager is a web application built on React and Firebase, following a Backend as a Service (BaaS) model. It is designed to easily manage financial records, providing users with a platform to track income and expenses. With its categorization feature, the application provides practical functionalities, detailed statistics, and analysis charts for financial management. 
 
 Deployed on github page, view through: [MoneyManager](https://zoe-yuye.github.io/MoneyManager/)
 
@@ -27,23 +25,31 @@ Deployed on github page, view through: [MoneyManager](https://zoe-yuye.github.io
   
 ## Technology Stack
 
-- **Programming Language:** JavaScript, CSS, html
+- **Programming Language:** JavaScript, CSS, HTML
 - **Runtime Enviroment:** Node.js
 - **Frontend Framework:** React, Bootstrap
 - **Backend Service:** Firebase
 - **Authentication:** Firebase Authentication
-- **Database:** Firebase Database
+- **Database:** Firestore Database
 
 ## Usage Instructions
 
 Money Manager runs in the Node.js environment, please ensure Node.js is installed before running the application.
 
 1. **Clone or Download Repository:**
-   
+   ```bash
+   git clone https://github.com/zoe-yuye/MoneyManager.git 
 2. **Install Dependencies:**
    ```bash
    npm install
-3. **Start Application:**
+3. **Set up Firebase:**
+   - Create a Firebase project 
+   - Add a web application in the firebase project 
+   - Replace the “firebaseConfig” to yours in src\firebase.js  
+   - Enable email/password and GitHub as sign-in providers in Authentication  
+   - Create a Firestore Database 
+   - Add the following index to Firestore Database 
+4. **Start Application:**
    ```bash
    npm start
    
