@@ -6,5 +6,4 @@ firebase.json
 firestore.indexes.json
 firestore.rules
 src/firebase.js
-src/firebase.js
-src/firebase.js
+.DS_Store
